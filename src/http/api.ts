@@ -57,7 +57,7 @@ export type GetRanking200 = {
 export const getPostSubscriptionsUrl = () => {
 
 
-  return `http://localhost:3333/subscriptions`
+  return `https://devstage-backend.onrender.com/subscriptions`
 }
 
 export const postSubscriptions = async (postSubscriptionsBody: PostSubscriptionsBody, options?: RequestInit): Promise<PostSubscriptions201> => {
@@ -86,7 +86,7 @@ export const postSubscriptions = async (postSubscriptionsBody: PostSubscriptions
 export const getGetInvitesSubscriberIdUrl = (subscriberId: string,) => {
 
 
-  return `http://localhost:3333/invites/${subscriberId}`
+  return `https://devstage-backend.onrender.com/invites/${subscriberId}`
 }
 
 export const getInvitesSubscriberId = async (subscriberId: string, options?: RequestInit): Promise<unknown> => {
@@ -114,7 +114,7 @@ export const getInvitesSubscriberId = async (subscriberId: string, options?: Req
 export const getGetSubscribersSubscriberIdRankingClicksUrl = (subscriberId: string,) => {
 
 
-  return `http://localhost:3333/subscribers/${subscriberId}/ranking/clicks`
+  return `https://devstage-backend.onrender.com/subscribers/${subscriberId}/ranking/clicks`
 }
 
 export const getSubscribersSubscriberIdRankingClicks = async (subscriberId: string, options?: RequestInit): Promise<GetSubscribersSubscriberIdRankingClicks200> => {
@@ -142,7 +142,7 @@ export const getSubscribersSubscriberIdRankingClicks = async (subscriberId: stri
 export const getGetSubscribersSubscriberIdRankingCountUrl = (subscriberId: string,) => {
 
 
-  return `http://localhost:3333/subscribers/${subscriberId}/ranking/count`
+  return `https://devstage-backend.onrender.com/subscribers/${subscriberId}/ranking/count`
 }
 
 export const getSubscribersSubscriberIdRankingCount = async (subscriberId: string, options?: RequestInit): Promise<GetSubscribersSubscriberIdRankingCount200> => {
@@ -170,7 +170,7 @@ export const getSubscribersSubscriberIdRankingCount = async (subscriberId: strin
 export const getGetSubscribersSubscriberIdRankingPositionUrl = (subscriberId: string,) => {
 
 
-  return `http://localhost:3333/subscribers/${subscriberId}/ranking/position`
+  return `https://devstage-backend.onrender.com/subscribers/${subscriberId}/ranking/position`
 }
 
 export const getSubscribersSubscriberIdRankingPosition = async (subscriberId: string, options?: RequestInit): Promise<GetSubscribersSubscriberIdRankingPosition200> => {
@@ -198,7 +198,7 @@ export const getSubscribersSubscriberIdRankingPosition = async (subscriberId: st
 export const getGetRankingUrl = () => {
 
 
-  return `http://localhost:3333/ranking`
+  return `https://devstage-backend.onrender.com/ranking`
 }
 
 export const getRanking = async ( options?: RequestInit): Promise<GetRanking200> => {
