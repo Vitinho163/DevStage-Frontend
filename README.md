@@ -14,8 +14,10 @@
 ![App Screenshot](https://imgur.com/QB1cPoH.png)
 ![App Screenshot](https://imgur.com/VwqEHtL.png)
 ![App Screenshot](https://imgur.com/oBN93Gb.png)
-![App Screenshot](https://imgur.com/5BmTA2f.png)
-![App Screenshot](https://imgur.com/UxUw4Bh.png)
+<p align="center">
+  <img src="https://imgur.com/5BmTA2f.png" alt="App Screenshot" width="300" />
+  <img src="https://imgur.com/UxUw4Bh.png" alt="App Screenshot" width="300" />
+</p>
 
 ## Summary
 
@@ -88,8 +90,10 @@ https://github.com/Vitinho163/DevStage-Backend
 ![App Screenshot](https://imgur.com/QB1cPoH.png)
 ![App Screenshot](https://imgur.com/VwqEHtL.png)
 ![App Screenshot](https://imgur.com/oBN93Gb.png)
-![App Screenshot](https://imgur.com/5BmTA2f.png)
-![App Screenshot](https://imgur.com/UxUw4Bh.png)
+<p align="center">
+  <img src="https://imgur.com/5BmTA2f.png" alt="App Screenshot" width="300" />
+  <img src="https://imgur.com/UxUw4Bh.png" alt="App Screenshot" width="300" />
+</p>
 
 ## Sumário
 
