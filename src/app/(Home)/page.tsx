@@ -1,12 +1,22 @@
-import { Radio } from 'lucide-react'
+import { Radio, Settings } from 'lucide-react'
 import Image from 'next/image'
 import logo from '../../assets/logo.svg'
 import SubscriptionForm from './subscription-form'
 import { Suspense } from 'react'
+import Link from 'next/link'
 
 export default function Home() {
   return (
     <div className="min-h-dvh flex flex-col justify-center gap-16">
+      <Link
+        href="/admin/login"
+        className="absolute top-4 right-4 text-gray-600 hover:text-gray-400 transition-colors"
+        aria-label="Área administrativa"
+      >
+        <Settings className="size-5" />
+      </Link>
+
+
       <div className="flex flex-col gap-8 items-center md:items-start">
         <Image src={logo} alt="devstage" width={108.5} height={30} />
 
