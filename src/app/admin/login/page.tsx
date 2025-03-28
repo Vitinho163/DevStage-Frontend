@@ -2,23 +2,27 @@
 
 import { Button } from '@/components/button'
 import { InputField, InputIcon, InputRoot } from '@/components/input'
+import { postAdminLogin } from '@/http/api'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { ArrowRight, Lock, User } from 'lucide-react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
+import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import logo from '../../../assets/logo.svg'
 
 const loginSchema = z.object({
   email: z.string().email('Digite um e-mail válido'),
-  password: z.string().min(6, 'Digite uma senha com no mínimo 6 caracteres'),
+  password: z.string().min(8, 'Digite uma senha com no mínimo 8 caracteres'),
 })
 
 type LoginSchema = z.infer<typeof loginSchema>
 
 export default function AdminLogin() {
   const router = useRouter()
+  const [error, setError] = useState<string | null>(null)
+  const [isLoading, setIsLoading] = useState(false)
 
   const {
     register,
@@ -28,8 +32,32 @@ export default function AdminLogin() {
     resolver: zodResolver(loginSchema),
   })
 
+  useEffect(() => {
+    const token = localStorage.getItem('accessToken')
+    if (token) {
+      router.push('/admin/dashboard')
+    }
+  }, [router])
+
   async function handleLogin({ email, password }: LoginSchema) {
-    // login
+    setIsLoading(true)
+    setError(null)
+
+    try {
+      const response = await postAdminLogin({ email, password })
+
+      if (!response?.accessToken) {
+        throw new Error('Token não recebido')
+      }
+
+      localStorage.setItem('accessToken', response.accessToken)
+      router.push('/admin/dashboard')
+    } catch (error) {
+      localStorage.removeItem('accessToken')
+      setError(error instanceof Error ? error.message : 'Falha no login')
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
@@ -96,8 +124,14 @@ export default function AdminLogin() {
             </div>
           </div>
 
-          <Button type="submit">
-            Entrar
+          {error && (
+            <p className="text-danger text-center text-sm font-semibold">
+              {error}
+            </p>
+          )}
+
+          <Button type="submit" disabled={isLoading}>
+            {isLoading ? 'Carregando...' : 'Entrar'}
             <ArrowRight />
           </Button>
         </form>
